@@ -34,5 +34,10 @@ class Contact extends Model
     {
         return $this->hasMany('App\Project','client_id');
     }
+    
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class);
+    }
 
 }

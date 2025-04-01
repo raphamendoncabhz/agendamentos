@@ -60,6 +60,14 @@
 							</select>
 					  	</div>
 					</div>
+
+					<div class="col-md-12">
+						<div class="form-group">
+						  <label class="control-label">{{ _lang('Color') }}</label>						
+						  <input type="text" class="form-control colorpicker" name="color" value="{{ old('color') }}" required>
+						</div>
+					</div>
+				  
 					
 					
 					<div class="form-group">

@@ -12,6 +12,11 @@
 	<a href="{{ url('contacts') }}"><i class="ti-id-badge"></i><span>{{ _lang('Contacts') }}</span></a>
 </li>
 @endif
+@if( has_feature( 'appointments_limit' ) )
+	<li>
+		<a href="{{ url('calendar') }}"><i class="ti-calendar"></i><span>{{ _lang('Appointments') }}</span></a>
+	</li>
+@endif
 
 @if( has_feature('project_management_module') )
 <li>
@@ -71,7 +76,7 @@
 @endif
 
 
-{{-- <li>
+<li>
 	<a href="javascript: void(0);"><i class="ti-shopping-cart-full"></i><span>{{ _lang('Sales') }}</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>
 	<ul class="nav-second-level" aria-expanded="false">
 		@if( has_feature('invoice_limit') )
@@ -84,7 +89,7 @@
 			<li class="nav-item"><a class="nav-link" href="{{ url('quotations') }}">{{ _lang('Quotation List') }}</a></li>
 		@endif
 	</ul>
-</li> --}}
+</li>
 
 {{-- <li>
 	<a href="javascript: void(0);"><i class="ti-credit-card"></i><span>{{ _lang('Accounts') }}</span><span class="menu-arrow"><i class="mdi mdi-chevron-right"></i></span></a>

@@ -13,6 +13,7 @@
         "biscolab/laravel-recaptcha": "^5.0",
         "doctrine/dbal": "^2.10",
         "fruitcake/laravel-cors": "^2.0",
+        "fullcalendar/fullcalendar": "^3.10",
         "guzzlehttp/guzzle": "^7.0.1",
         "intervention/image": "^2.5",
         "laravel/framework": "^8.65",
@@ -74,7 +75,12 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "oomphinc/composer-installers-extender": true,
+            "robloach/component-installer": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

@@ -58,6 +58,7 @@ class PackageController extends Controller
 			'is_featured' => 'required',
 			'staff_limit' => 'required',
 			'contacts_limit' => 'required',
+			'appointments_limit' => 'required',
 			'invoice_limit' => 'required',
 			'quotation_limit' => 'required',
 			'live_chat' => 'required',
@@ -83,6 +84,7 @@ class PackageController extends Controller
 		$package->is_featured = $request->is_featured;
 		$package->staff_limit = serialize($request->staff_limit);
 		$package->contacts_limit = serialize($request->contacts_limit);
+		$package->appointments_limit = serialize($request->appointments_limit);
 		$package->invoice_limit = serialize($request->invoice_limit);
 		$package->quotation_limit = serialize($request->quotation_limit);
 		$package->project_management_module = serialize($request->project_management_module);
@@ -154,6 +156,7 @@ class PackageController extends Controller
 			'is_featured' => 'required',
 			'staff_limit' => 'required',
 			'contacts_limit' => 'required',
+			'appointments_limit' => 'required',
 			'invoice_limit' => 'required',
 			'quotation_limit' => 'required',
 			'live_chat' => 'required',
@@ -173,13 +176,12 @@ class PackageController extends Controller
 			}			
 		}
 	
-        	
-		
         $package = Package::find($id);
 		$package->package_name = $request->package_name;
 		$package->is_featured = $request->is_featured;
 		$package->staff_limit = serialize($request->staff_limit);
 		$package->contacts_limit = serialize($request->contacts_limit);
+		$package->appointments_limit = serialize($request->appointments_limit);
 		$package->invoice_limit = serialize($request->invoice_limit);
 		$package->quotation_limit = serialize($request->quotation_limit);
 		$package->project_management_module = serialize($request->project_management_module);

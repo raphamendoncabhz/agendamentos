@@ -1,0 +1,25 @@
+
+
+Tenho as seguintes tabelas no banco de cados 
+companies 
+contacts 
+users 
+
+Gostaria de criar um sistema de agendamentos que atendesse os seguitnes requisitos 
+Os profissionais são cadastrados na tabela users com o campo user_type = staff que possui o campo company_id para identificar a empresa do funcionario
+    exemplo 
+    SEGUNDA  - 08:00 - 18:00 
+    dever ser preenchida toda a semana e deverá serpossivel alterar para cada dia da semana horários diferentes 
+    deverá tbm preencher o tempo médio do atendimento 
+Os pacientes sao contacts 
+os agendamentos deverão ser realizados da seguinte forma 
+selecinar o paciente
+selecionar o médico 
+informar o tempo médio da consulta para verificar que nao ultrapasse o limite do médico ou que nao sopreponha outro agendamento
+selecionar a data e verificar se aquele médico tem aquela data disponivel de acordo com o cadastrado no seu calendário de atendimento e 
+listar os horários dispniveis do médico caso nao tenha um horário disponivel ele pode mostrar mas nao podera ser selecioado.
+
+crie os comandos para gerar migrations, models, controllers e views e tudo o que for necessário para implementar essa funcinalidade 
+crie os códigos de cada controller views models e migrations 
+quero todos os códigos desenvolvidos em laravel 
+

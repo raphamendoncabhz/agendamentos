@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\CalendarController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
  */
+Route::get('/teste', 'TesteController@index');
 
 Route::group(['middleware' => ['install']], function () {
 
@@ -109,6 +113,26 @@ Route::group(['middleware' => ['install']], function () {
 			Route::get('contacts/get_table_data', 'ContactController@get_table_data');
 			Route::post('contacts/send_email/{id}', 'ContactController@send_email')->name('contacts.send_email');
 			Route::resource('contacts', 'ContactController');
+
+
+			// Página principal do calendário
+			Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar.index');
+			
+			// API para buscar os eventos do calendário
+			// Route::get('/calendar/events', [CalendarController::class, 'events'])->name('calendar.events');
+			
+			//Apoinmments 
+			Route::get('/calendar/events', [AppointmentController::class, 'events']);
+			Route::get('/api/doctors/{doctor}/available-times', [AppointmentController::class, 'getAvailableTimes']);
+			Route::post('/appointments/store', [AppointmentController::class, 'store']);			Route::resource('appointments', 'AppointmentController');
+			Route::put('/appointments/{appointment}', [AppointmentController::class, 'update'])->name('appointments.update');
+			// Schedules
+			Route::resource('schedules', 'ScheduleController');
+			Route::resource('chairs', 'ChairController');
+
+			Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar.index');
+			Route::get('/calendar/events', [CalendarController::class, 'events'])->name('calendar.events');
+			
 
 			//Lead Controller
 			Route::match(['get', 'post'], 'leads/import', 'LeadController@import')->name('leads.import');

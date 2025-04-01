@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Schedule;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\User;
@@ -62,6 +63,7 @@ class StaffController extends Controller
      */
     public function create(Request $request)
     {
+        
 		if( ! $request->ajax()){
 		   return view('backend.accounting.staff.create');
 		}else{
@@ -83,6 +85,7 @@ class StaffController extends Controller
 			'password' => 'required|max:20|min:6|confirmed',
             'status'   => 'required',
 			'role_id'  => 'required',
+			'color'  => 'required',
 			'profile_picture' => 'nullable|image|max:5120',
 		]);
 		
@@ -104,6 +107,7 @@ class StaffController extends Controller
 		$user->user_type = 'staff';
 		$user->status = $request->input('status');
 		$user->role_id = $request->input('role_id');
+		$user->color = $request->input('color');
 	    $user->profile_picture = 'default.png';
         
 		if ($request->hasFile('profile_picture')){
@@ -142,13 +146,16 @@ class StaffController extends Controller
      */
     public function show(Request $request,$id)
     {
-        $user = User::where("id",$id)
+        $staff = User::where("id",$id)
                     ->where("company_id",company_id())
                     ->first();
+
+          // Obter os horários já configurados para o médico
+        $staff['schedule']=Schedule::where('user_id', $staff->id)->get();
 		if(! $request->ajax()){
-		    return view('backend.accounting.staff.view',compact('user','id'));
+		    return view('backend.accounting.staff.view',compact('staff','id'));
 		}else{
-			return view('backend.accounting.staff.modal.view',compact('user','id'));
+			return view('backend.accounting.staff.modal.view',compact('staff','id'));
 		} 
         
     }
@@ -187,6 +194,7 @@ class StaffController extends Controller
                 Rule::unique('users')->ignore($id),
             ],
             'role_id'  => 'required',
+			'color'  => 'required',
 			'password' => 'nullable|max:20|min:6|confirmed',
 			'status' => 'required',
 			'profile_picture' => 'nullable|image|max:5120',
@@ -212,6 +220,8 @@ class StaffController extends Controller
 		$user->user_type = 'staff';
 		$user->status = $request->input('status');
 		$user->role_id = $request->input('role_id');
+		$user->color = $request->input('color');
+
 	    if ($request->hasFile('profile_picture')){
            $image = $request->file('profile_picture');
            $file_name = "profile_".time().'.'.$image->getClientOriginalExtension();

@@ -101,6 +101,37 @@
 								</tr> 
 
 								<tr>
+									<td>
+										<div>
+										  <div class="form-group">
+											<label class="control-label">{{ _lang('Appointments Limit') }}</label>						
+											<select class="form-control select2" name="appointments_limit[monthly]" id="appointments_limit_monthly" required>
+												<option value="No">{{ _lang('No') }}</option>
+												<option value="Unlimited">{{ _lang('Unlimited') }}</option>
+												@for( $i = 1; $i <= 100; $i++ )
+													<option value="{{ $i }}">{{ $i }}</option>
+												@endfor
+											</select>
+										  </div>
+										</div>
+									</td>
+									<td>
+										<div>
+										  <div class="form-group">
+											<label class="control-label">{{ _lang('Appointments Limit') }}</label>						
+											<select class="form-control select2" name="appointments_limit[yearly]" id="appointments_limit_yearly" required>
+												<option value="No">{{ _lang('No') }}</option>
+												<option value="Unlimited">{{ _lang('Unlimited') }}</option>
+												@for( $i = 1; $i <= 100; $i++ )
+													<option value="{{ $i }}">{{ $i }}</option>
+												@endfor
+											</select>
+										  </div>
+										</div>
+									</td>
+								</tr> 
+
+								<tr>
 									<td>				
 										<div>
 										  <div class="form-group">
@@ -360,6 +391,9 @@
 
 	$("#contacts_limit_monthly").val("{{ unserialize($package->contacts_limit)['monthly'] }}").trigger('change');
 	$("#contacts_limit_yearly").val("{{ unserialize($package->contacts_limit)['yearly'] }}").trigger('change');
+
+	$("#appointments_limit_monthly").val("{{ unserialize($package->appointments_limit)['monthly'] }}").trigger('change');
+	$("#appointments_limit_yearly").val("{{ unserialize($package->appointments_limit)['yearly'] }}").trigger('change');
 
 	$("#invoice_limit_monthly").val("{{ unserialize($package->invoice_limit)['monthly'] }}").trigger('change');
 	$("#invoice_limit_yearly").val("{{ unserialize($package->invoice_limit)['yearly'] }}").trigger('change');

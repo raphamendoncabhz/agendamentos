@@ -84,10 +84,10 @@ return array (
     'bold' => $fontDir . '/noto_sans_bengali_bold_8ebfa9984024649fcb8cf004592feb5f',
   ),
   'poppins' => array(
-    'normal' => $fontDir . '/poppins_normal_442dffd12abdf0df26c14405d3f49bfa',
-    '500' => $fontDir . '/poppins_500_6a6f5e017da7e062546fd806ab3b249c',
-    '600' => $fontDir . '/poppins_600_272b14b77a21dc5827f4570eff556c8f',
-    'bold' => $fontDir . '/poppins_bold_2d1c4b360c3ac297e98fc2cfd808a2cc',
+    'normal' => $fontDir . '/poppins_normal_12f61e1aca2bd22472c17cf0465b304e',
+    '500' => $fontDir . '/poppins_500_eaa67a2dcd54166f62e0cc3adc7e1b71',
+    '600' => $fontDir . '/poppins_600_a68d0fa714114c7ef3a2a04bbe8fda45',
+    'bold' => $fontDir . '/poppins_bold_dd0c9eff9089b312c7d5e9a1f45059a4',
   ),
 );
 }; ?>

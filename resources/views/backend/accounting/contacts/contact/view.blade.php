@@ -25,10 +25,12 @@
 			<div class="card-body p-3">
 			  <ul class="nav flex-column nav-tabs settings-tab">
 				  <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#general-info" aria-expanded="true"><i class="far fa-user"></i> {{ _lang('General') }}</a></li>
-				  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#projects" aria-expanded="false"><i class="fas fa-briefcase"></i> {{ _lang('Projects') }}</a></li>
-				  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#invoices" aria-expanded="false"><i class="fas fa-file-invoice-dollar"></i> {{ _lang('Invoices') }}</a></li>
-				  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#quotations" aria-expanded="false"><i class="fas fa-file-invoice"></i> {{ _lang('Quotations') }}</a></li>
-				  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#transactions" aria-expanded="false"><i class="fas fa-credit-card"></i> {{ _lang('Transactions') }}</a></li>
+				  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#quotations" aria-expanded="false"><i class="fas fa-file-invoice"></i> {{ _lang('Orçamentos') }}</a></li>
+				  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#projects" aria-expanded="false"><i class="fas fa-briefcase"></i> {{ _lang('Tratamentos') }}</a></li>
+				  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#invoices" aria-expanded="false"><i class="fas fa-file-invoice-dollar"></i> {{ _lang('Débitos') }}</a></li>
+				  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#transactions" aria-expanded="false"><i class="fas fa-credit-card"></i> {{ _lang('Documentos') }}</a></li>
+				  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#transactions" aria-expanded="false"><i class="fas fa-credit-card"></i> {{ _lang('Imagens') }}</a></li>
+				  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#transactions" aria-expanded="false"><i class="fas fa-credit-card"></i> {{ _lang('Anamnese') }}</a></li>
 				  <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#email" aria-expanded="false"><i class="far fa-envelope-open"></i> {{ _lang('Email') }}</a></li>
 				  <li class="nav-item"><a class="nav-link" href="{{ action('ContactController@edit', $contact['id']) }}"><i class="far fa-edit"></i> {{ _lang('Edit') }}</a></li>
 			  </ul>
@@ -125,16 +127,11 @@
 						    <th colspan="2"><h5>{{ _lang('General Information') }}</h5></th>
 						</thead>
 						<tbody>
-							<tr><td>{{ _lang('Profile Type') }}</td><td><b>{{ $contact->profile_type }}</b></td></tr>
-							<tr><td>{{ _lang('Company Name') }}</td><td><b>{{ $contact->company_name }}</b></td></tr>
 							<tr><td>{{ _lang('Contact Name') }}</td><td><b>{{ $contact->contact_name }}</b></td></tr>
 							<tr><td>{{ _lang('Group') }}</td><td><b>{{ $contact->group->name }}</b></td></tr>
 							<tr><td>{{ _lang('VAT ID') }}</td><td><b>{{ $contact->vat_id }}</b></td></tr>
-							<tr><td>{{ _lang('Reg No') }}</td><td><b>{{ $contact->reg_no }}</b></td></tr>
 							<tr><td>{{ _lang('Contact Email') }}</td><td><b>{{ $contact->contact_email }}</b></td></tr>
 							<tr><td>{{ _lang('Contact Phone') }}</td><td><b>{{ $contact->contact_phone }}</b></td></tr>
-							<tr><td>{{ _lang('Country') }}</td><td><b>{{ $contact->country }}</b></td></tr>
-							<tr><td>{{ _lang('Currency') }}</td><td><b>{{ $contact->currency }} ({!! xss_clean(get_currency_symbol( $contact->currency )) !!})</b></td></tr>
 							<tr><td>{{ _lang('City') }}</td><td><b>{{ $contact->city }}</b></td></tr>
 							<tr><td>{{ _lang('State') }}</td><td><b>{{ $contact->state }}</b></td></tr>
 							<tr><td>{{ _lang('Zip') }}</td><td><b>{{ $contact->zip }}</b></td></tr>

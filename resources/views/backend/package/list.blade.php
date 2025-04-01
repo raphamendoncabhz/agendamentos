@@ -27,6 +27,7 @@
 						<ul class="text-left p-3">
 							<li {{ unserialize($package->staff_limit)['monthly'] != 'No' ? 'class=yes-feature' : 'class=no-feature' }}>{{ unserialize($package->staff_limit)['monthly'].' '._lang('Staff Accounts') }}</li>
 							<li {{ unserialize($package->contacts_limit)['monthly'] != 'No' ? 'class=yes-feature' : 'class=no-feature' }}>{{ unserialize($package->contacts_limit)['monthly'].' '._lang('Contacts') }}</li>
+							<li {{ unserialize($package->appointments_limit)['monthly'] != 'No' ? 'class=yes-feature' : 'class=no-feature' }}>{{ unserialize($package->appointments_limit)['monthly'].' '._lang('Appointments') }}</li>
 							<li {{ unserialize($package->invoice_limit)['monthly'] != 'No' ? 'class=yes-feature' : 'class=no-feature' }}>{{ unserialize($package->invoice_limit)['monthly'].' '._lang('Invoice') }}</li>
 							<li {{ unserialize($package->quotation_limit)['monthly'] != 'No' ? 'class=yes-feature' : 'class=no-feature' }}>{{ unserialize($package->quotation_limit)['monthly'].' '._lang('Quotation') }}</li>
 							<li {{ unserialize($package->project_management_module)['monthly'] == 'Yes' ? 'class=yes-feature' : 'class=no-feature' }}>{{ _lang('Project Management') }}</li>
@@ -63,6 +64,7 @@
 						<ul class="text-left p-3">
 							<li {{ unserialize($package->staff_limit)['yearly'] != 'No' ? 'class=yes-feature' : 'class=no-feature' }}>{{ unserialize($package->staff_limit)['yearly'].' '._lang('Staff Accounts') }}</li>
 							<li {{ unserialize($package->contacts_limit)['yearly'] != 'No' ? 'class=yes-feature' : 'class=no-feature' }}>{{ unserialize($package->contacts_limit)['yearly'].' '._lang('Contacts') }}</li>
+							<li {{ unserialize($package->appointments_limit)['yearly'] != 'No' ? 'class=yes-feature' : 'class=no-feature' }}>{{ unserialize($package->appointments_limit)['yearly'].' '._lang('Appointments') }}</li>
 							<li {{ unserialize($package->invoice_limit)['yearly'] != 'No' ? 'class=yes-feature' : 'class=no-feature' }}>{{ unserialize($package->invoice_limit)['yearly'].' '._lang('Invoice') }}</li>
 							<li {{ unserialize($package->quotation_limit)['yearly'] != 'No' ? 'class=yes-feature' : 'class=no-feature' }}>{{ unserialize($package->quotation_limit)['yearly'].' '._lang('Quotation') }}</li>
 							<li {{ unserialize($package->project_management_module)['yearly'] == 'Yes' ? 'class=yes-feature' : 'class=no-feature' }}>{{ _lang('Project Management') }}</li>

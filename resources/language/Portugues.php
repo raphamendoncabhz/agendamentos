@@ -1085,3 +1085,4 @@ $language["No data available"] = "Nenhum dado disponível";
 $language["Membership Payment"] = "Pagamento da Assinatura";
 $language["Get Started"] = "Comece Agora";
 $language["Sub Page Banner"] = "Banner da Subpágina";
+$language["Appointments"] = "Agendamentos";
