@@ -15,7 +15,8 @@ class AddFieldStatusIdAppointmentsTable extends Migration
     {
         Schema::table('appointments', function (Blueprint $table) {
             //
-            $table->foreignId('status_id')->constrained('appointments_status')->cascadeOnDelete()->default(null);
+
+            $table->foreignId('status_id')->default(null);
 
         });
     }

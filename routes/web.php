@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\WhatsappInstanceController;
 
 
 /*
@@ -133,7 +134,21 @@ Route::group(['middleware' => ['install']], function () {
 			Route::get('/calendar', [CalendarController::class, 'index'])->name('calendar.index');
 			Route::get('/calendar/events', [CalendarController::class, 'events'])->name('calendar.events');
 			
-
+			Route::prefix('whatsapp')->name('whatsapp.')->group(function () {
+				Route::prefix('instances')->name('instances.')->group(function () {
+					Route::get('/', [WhatsappInstanceController::class, 'index'])->name('index');
+					Route::get('/create', [WhatsappInstanceController::class, 'create'])->name('create');
+					Route::post('/', [WhatsappInstanceController::class, 'store'])->name('store');
+					Route::get('/{instance}', [WhatsappInstanceController::class, 'show'])->name('show');
+					Route::post('/{instance}/connect', [WhatsappInstanceController::class, 'connect'])->name('connect');
+					Route::post('/{instance}/disconnect', [WhatsappInstanceController::class, 'disconnect'])->name('disconnect');
+					Route::delete('/{instance}', [WhatsappInstanceController::class, 'destroy'])->name('destroy');
+					
+					// Rotas para envio de mensagens
+					Route::get('/{instance}/send-message', [WhatsappInstanceController::class, 'showSendMessage'])->name('show-send-message');
+					Route::post('/{instance}/send-message', [WhatsappInstanceController::class, 'sendMessage'])->name('send-message');
+				});
+			});
 			//Lead Controller
 			Route::match(['get', 'post'], 'leads/import', 'LeadController@import')->name('leads.import');
 			Route::match(['get', 'post'], 'leads/convert_to_customer/{id}', 'LeadController@convert_to_customer')->name('leads.convert_to_customer');

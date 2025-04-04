@@ -35,5 +35,9 @@ return [
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect'      => env('GOOGLE_REDIRECT'),
     ],
+    'evolution_api' => [
+        'url' => env('EVOLUTION_API_URL', 'https://api.superatendentes.com.br'),
+        'key' => env('EVOLUTION_API_KEY', 'badb79937db09db742de5cc3686f7170'),
+    ],
 
 ];
